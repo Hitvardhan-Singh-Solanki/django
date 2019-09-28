@@ -1,0 +1,22 @@
+h1{
+    color: brown
+}
+
+img{
+    width: 100%;
+    height: auto;
+}
+
+
+ol>li{
+    padding: 20px 0;
+}
+
+.form{
+   display: flex;
+    flex-flow: column;
+}
+
+
+
+
