@@ -29,7 +29,6 @@ def forms(req):
             print(form.cleaned_data['name'])
 
     return render(req, "app/forms.html", {'form': form})
-
 def newUser(req):
     form = NewUserForm()
     if(req.method == 'POST'):
@@ -41,3 +40,9 @@ def newUser(req):
             print('Error form invalid')
 
     return render(req, 'app/signUp.html', {'form': form})
+
+
+def other(req):
+    return render(req, 'app/other.html')
+def relative(req):
+    return render(req, 'app/relative_url_templates.html')
