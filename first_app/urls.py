@@ -6,5 +6,6 @@ urlpatterns = [
     path('help', views.help, name="help"),
     path('users', views.users, name="users"),
     path('forms', views.forms, name="forms"),
+    path('sign-up', views.newUser, name = 'signup'),
     re_path(r'^.*/$', views.noPage, name="error")
 ]

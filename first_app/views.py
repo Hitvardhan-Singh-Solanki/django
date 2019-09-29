@@ -1,7 +1,7 @@
 from django.shortcuts import render
 from django.http import HttpResponse
 from first_app.models import Topic, AccessRecord, Webpage, User
-from first_app.forms import FormName
+from first_app.forms import FormName, NewUserForm
 
 # Create your views here.
 
@@ -29,3 +29,15 @@ def forms(req):
             print(form.cleaned_data['name'])
 
     return render(req, "app/forms.html", {'form': form})
+
+def newUser(req):
+    form = NewUserForm()
+    if(req.method == 'POST'):
+        form = NewUserForm(req.POST)
+        if form.is_valid():
+            form.save(commit=True)
+            return index(req)
+        else:
+            print('Error form invalid')
+
+    return render(req, 'app/signUp.html', {'form': form})

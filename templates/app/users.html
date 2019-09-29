@@ -6,28 +6,32 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <link rel="stylesheet" href="{% static 'css/styles.css' %}" />
     <title>Users</title>
 </head>
 
 <body>
-    <h1>Hi Welcome to django</h1>
-    <h2>Here are you access records!</h2>
-    <div class="django">
-        {% if users %}
-        <ol>
-            {% for user in users  %}
-            <li>
-                <p>Users info</p>
-                <ul>
-                    <li>{{user.first_name}}</li>
-                    <li>{{user.last_name}}</li>
-                    <li>{{user.email}}</li>
-                </ul>
-            </li>
-            {% endfor %}
-        </ol>
-        {% endif %}
+    <div class="container">
+        <h1>Hi Welcome to django</h1>
+        <h2>Here are you access records!</h2>
+        <div class="django">
+            {% if users %}
+            <ol>
+                {% for user in users  %}
+                <li>
+                    <p>Users info</p>
+                    <ul>
+                        <li>{{user.first_name}}</li>
+                        <li>{{user.last_name}}</li>
+                        <li>{{user.email}}</li>
+                    </ul>
+                </li>
+                {% endfor %}
+            </ol>
+            {% endif %}
+        </div>
     </div>
 </body>
 
